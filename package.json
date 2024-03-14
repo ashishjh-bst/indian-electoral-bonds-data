@@ -1,0 +1,14 @@
+{
+  "name": "indian-electoral-bonds-data",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "This is a repository to analyze electoral-bonds data release by election commission of India",
+  "scripts": {
+    "convert": "node convertor.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pdfreader": "^3.0.2"
+  }
+}
