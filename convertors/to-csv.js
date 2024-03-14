@@ -7,7 +7,7 @@ export async function Convert(dir) {
     const donorFilePath = path.resolve(`${dir}/donors.csv`)
     fs.rmSync(donorFilePath,{ force: true})
     const donors = await readDonors();
-    const donorsCSV = `date;name;amount\n${donors.map( donor => `${donor.date};${donor.name};${donor.amount}`).join("\n")}`;
+    const donorsCSV = `date|name|amount\n${donors.map( donor => `${donor.date}|${donor.name}|${donor.amount}`).join("\n")}`;
     console.log(`Parsing Donors Successful!, Writing to ${donorFilePath}`)
     fs.writeFileSync(donorFilePath, donorsCSV)
 
@@ -15,7 +15,7 @@ export async function Convert(dir) {
     const acceptorsFilePath = path.resolve(`${dir}/acceptors.csv`)
     fs.rmSync(acceptorsFilePath, { force: true})
     const acceptors = await readAcceptors();
-    const acceptorsCSV = `date;name;amount\n${acceptors.map( acceptor => `${acceptor.date};${acceptor.name};${acceptor.amount}`).join("\n")}`;
+    const acceptorsCSV = `date|name|amount\n${acceptors.map( acceptor => `${acceptor.date}|${acceptor.name}|${acceptor.amount}`).join("\n")}`;
     console.log(`Parsing Acceptors Successful, Writing to ${acceptorsFilePath}`)
     fs.writeFileSync(acceptorsFilePath, acceptorsCSV)
     console.log("Success!")
